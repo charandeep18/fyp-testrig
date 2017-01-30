@@ -33,22 +33,57 @@ formatter.match({
   "location": "Openwebpage.goToSite()"
 });
 formatter.result({
-  "duration": 3490144992,
+  "duration": 3626856049,
   "status": "passed"
 });
 formatter.match({
   "location": "Openwebpage.findSite2()"
 });
 formatter.result({
-  "duration": 25710607,
+  "duration": 24776682,
   "status": "passed"
 });
 formatter.match({
   "location": "Openwebpage.clickSite2()"
 });
 formatter.result({
-  "duration": 816523135,
+  "duration": 811463580,
   "status": "passed"
+});
+formatter.scenario({
+  "line": 8,
+  "name": "Successfully Login to website",
+  "description": "",
+  "id": "openwebpage;successfully-login-to-website",
+  "type": "scenario",
+  "keyword": "Scenario"
+});
+formatter.step({
+  "line": 9,
+  "name": "User has navigated to the website",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 10,
+  "name": "Finds the link to the login page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 11,
+  "name": "Clicks on the login link",
+  "keyword": "Then "
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
 });
 formatter.uri('testcases\Openwebpage2.feature');
 formatter.feature({
@@ -80,7 +115,7 @@ formatter.match({
   "location": "Openwebpage.goToSite()"
 });
 formatter.result({
-  "duration": 2795121068,
+  "duration": 2872378125,
   "status": "passed"
 });
 formatter.match({});

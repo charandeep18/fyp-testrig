@@ -1,4 +1,4 @@
-package testcases;
+package FYP_TESTRIG.fyp_testrig;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -15,7 +15,7 @@ WebDriver driver = null;
 public void goToSite() {
 System.setProperty("webdriver.chrome.driver", "C:\\Users\\chara\\Desktop\\chromedriver.exe");
 driver = new ChromeDriver();
-driver.navigate().to("http://127.0.0.1:62642/Homepage.html");
+driver.navigate().to("http://127.0.0.1:56039/Homepage.html");
 }
 
 @And("^find the link to the webpage$")
