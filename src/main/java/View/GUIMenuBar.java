@@ -18,13 +18,29 @@ public class GUIMenuBar extends Application implements EventHandler<ActionEvent>
 	static StackPane mainpane = new StackPane();
 	static public Stage menuStage = new Stage();
 	
-	//FileMenu and FileMenu Items
+	//MenuBar
+	MenuBar menuBar = new MenuBar();
+	
+	//fileMenu and fileMenu Items
 	private Menu fileMenu = new Menu("File");
 	private MenuItem open = new MenuItem("Open text file");
 	private MenuItem save = new MenuItem("Save text file");
 	private MenuItem close = new MenuItem("Close Program");
 	
-	//
+	//viewMenu and viewMenu Items
+	private Menu viewMenu = new Menu("View");
+	private MenuItem gherkinRUCM = new MenuItem("Gherkin/RUCM");
+	private MenuItem selenium = new MenuItem("Selenium");
+	
+	//runMenu and runMenu Items
+	private Menu runMenu = new Menu("Run Options");
+	private MenuItem chrome = new MenuItem("Open Chrome");
+	private MenuItem firefox = new MenuItem("Open FireFox");
+	
+	//helpMenu
+	private Menu helpMenu = new Menu("Help");
+	
+	//Menu
 
 	public static void main(String[] args) {
 		launch(args);
@@ -34,32 +50,12 @@ public class GUIMenuBar extends Application implements EventHandler<ActionEvent>
 	public void start(Stage menuStage) throws Exception {
 
 	fileMenu.getItems().addAll(open,save,close);
-	
-	final Menu viewMenu = new Menu ("View");
-	MenuItem gherkinRUCM = new MenuItem("Gherkin/RUCM");
-	MenuItem selenium = new MenuItem("Selenium");
 	viewMenu.getItems().addAll(gherkinRUCM,selenium);
-	
-//	viewMenu.getItems().add(new MenuItem("Gherkin/RUCM"));
-//	viewMenu.getItems().add(new MenuItem("Selenium"));	
-	
-	
-	final Menu runMenu = new Menu ("Run"); 
-	MenuItem chrome = new MenuItem("Open Chrome");
-	MenuItem firefox = new MenuItem("Open Firefox");
 	runMenu.getItems().addAll(chrome,firefox);
-//	seleniumMenu.getItems().add(new MenuItem("Open Chrome"));
-//	seleniumMenu.getItems().add(new MenuItem("Open Firefox"));
-	
-	final Menu helpMenu = new Menu ("Help");
-	helpMenu.setOnAction(this);
-	
-	MenuBar menuBar = new MenuBar();
 	menuBar.getMenus().addAll(fileMenu,viewMenu,runMenu,helpMenu);
 	
 
-	mainpane.getChildren().add(menuBar);
-	
+	mainpane.getChildren().add(menuBar);	
 	Scene scene = new Scene(mainpane, 500, 400);
 	
 	menuStage.setScene(scene);
