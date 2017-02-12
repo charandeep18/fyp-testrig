@@ -2,6 +2,7 @@ package View;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.control.SplitPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
@@ -15,9 +16,13 @@ public class GUIMain extends Application {
 	public void start(Stage primaryStage) throws Exception {
 		primaryStage.setTitle("RUCM - Use Case Creator");
 		
-		StackPane mainpane = new StackPane();	
+		SplitPane splitpane = new SplitPane();
+		StackPane leftpane = new StackPane();	
+		StackPane rightpane = new StackPane();
 		
-		Scene scene = new Scene(mainpane, 500, 400);
+		splitpane.getItems().addAll(leftpane,rightpane);
+		
+		Scene scene = new Scene(splitpane, 500, 400);
 		primaryStage.setScene(scene);
 		primaryStage.show();
 }
