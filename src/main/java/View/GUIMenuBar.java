@@ -17,6 +17,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.stage.FileChooser;
@@ -24,7 +25,8 @@ import javafx.stage.FileChooser;
 public class GUIMenuBar extends Application{
 	
 	//Main Pane and Menu Stage
-	static StackPane mainpane = new StackPane();
+	//static StackPane mainpane = new StackPane();
+	static HBox mainmenuPane = new HBox();
 	static public Stage menuStage = new Stage();
 	
 	//MenuBar
@@ -57,9 +59,9 @@ public class GUIMenuBar extends Application{
 	private MenuItem about = new MenuItem("About");
 	private MenuItem guide = new MenuItem("Guide");
 	
-//	public static void main(String[] args) {
-//		launch(args);
-//	}	
+	public static void main(String[] args) {
+		launch(args);
+	}	
 	
 	@Override
 	public void start(Stage menuStage) throws Exception {
@@ -91,8 +93,8 @@ public class GUIMenuBar extends Application{
 	menuBar.getMenus().addAll(fileMenu,viewMenu,runMenu,helpMenu);
 	
 
-	mainpane.getChildren().add(menuBar);	
-	Scene scene = new Scene(mainpane, 500, 400);
+	mainmenuPane.getChildren().add(menuBar);	
+	Scene scene = new Scene(mainmenuPane, 500, 400);
 	
 	menuStage.setScene(scene);
 	menuStage.show();
