@@ -23,7 +23,7 @@ public class Login {
 	
 	@Then("^Clicks on the login link")
 	public void clickLoginButton(){
-	driver.findElement(By.id("login")).click();	
+	driver.findElement(By.id("logn")).click();	
 	}
 	
 	

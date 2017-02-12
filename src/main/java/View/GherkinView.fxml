@@ -31,7 +31,7 @@
                     </rowConstraints>
                      <children>
                         <Button alignment="CENTER" mnemonicParsing="false" prefHeight="31.0" prefWidth="137.0" text="Load Test Case" textAlignment="CENTER" GridPane.columnIndex="1" />
-                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="139.0" text="Save Test Case" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="139.0" text="Create Defs" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="127.0" text="Exit Application" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                         <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="128.0" text="Seleniun View" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                      </children>
