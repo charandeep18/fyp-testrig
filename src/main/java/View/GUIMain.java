@@ -17,10 +17,12 @@ public class GUIMain extends Application {
 		primaryStage.setTitle("RUCM - Use Case Creator");
 		
 		SplitPane splitpane = new SplitPane();
-		StackPane leftpane = new StackPane();	
+		StackPane leftpane = new StackPane();
 		StackPane rightpane = new StackPane();
 		
 		splitpane.getItems().addAll(leftpane,rightpane);
+//		splitpane.getChildrenUnmodifiable().addAll(GUIMenuBar.mainpane);
+		
 		
 		Scene scene = new Scene(splitpane, 500, 400);
 		primaryStage.setScene(scene);
