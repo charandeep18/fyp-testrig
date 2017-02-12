@@ -4,6 +4,7 @@ package View;
 
 import java.awt.Desktop;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -29,9 +30,10 @@ public class GUIMenuBar extends Application{
 	//MenuBar
 	private MenuBar menuBar = new MenuBar();
 	
-	//FileChooser
+	//FileChooser and FileWriter
 	private Desktop desktop = Desktop.getDesktop();
 	private final FileChooser fileChooser = new FileChooser();
+//	private FileWriter filerWriter = new FileWriter();
 	
 	//fileMenu and fileMenu Items
 	private Menu fileMenu = new Menu("File");
@@ -52,16 +54,15 @@ public class GUIMenuBar extends Application{
 	
 	//helpMenu
 	private Menu helpMenu = new Menu("Help");
+	private MenuItem about = new MenuItem("About");
+	private MenuItem guide = new MenuItem("Guide");
 	
-	//Menu
-
 	public static void main(String[] args) {
 		launch(args);
 	}	
 	
 	@Override
 	public void start(Stage menuStage) throws Exception {
-	
 	fileMenu.getItems().addAll(open,save,close);
 	close.setOnAction(e -> {
 		Platform.exit();
@@ -69,13 +70,25 @@ public class GUIMenuBar extends Application{
 	});
 	open.setOnAction(e -> {
         File file = fileChooser.showOpenDialog(menuStage);
+        fileChooser.setTitle("Open Gherkin File");
         if (file != null) {
             openFile(file);
         }
 	});
-	save.setOnAction(e -> {});
+	save.setOnAction(e -> {
+		File file = fileChooser.showSaveDialog(menuStage);
+		fileChooser.setTitle("Save Gherkin File");
+		if (file != null) {
+			saveFile(file,"");
+		}
+	});
 	viewMenu.getItems().addAll(gherkinRUCM,selenium);
 	runMenu.getItems().addAll(chrome,firefox);
+	helpMenu.getItems().addAll(about,guide);
+	about.setOnAction(e-> {
+		GUIAbout.display("About this software", "About this software");
+	});
+	
 	menuBar.getMenus().addAll(fileMenu,viewMenu,runMenu,helpMenu);
 	
 
@@ -95,5 +108,18 @@ public class GUIMenuBar extends Application{
                     Level.SEVERE, null, ex
                 );
         }
+    }
+    
+    private void saveFile(File file, String content) {
+    	try {
+    		FileWriter fileWriter = null;
+    		fileWriter = new FileWriter(file);
+    		fileWriter.write(content);
+    		fileWriter.close();
+    	} catch (IOException ex) {
+    		Logger.getLogger(
+    				GUIMenuBar.class.getName()).log(
+    						Level.SEVERE, null, ex);
+    	}
     }
 }
