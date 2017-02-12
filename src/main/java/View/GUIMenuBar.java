@@ -1,5 +1,12 @@
 package View;
 
+
+
+import java.awt.Desktop;
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -11,15 +18,20 @@ import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import javafx.stage.FileChooser;
 
-public class GUIMenuBar extends Application implements EventHandler<ActionEvent> {
+public class GUIMenuBar extends Application{
 	
 	//Main Pane and Menu Stage
 	static StackPane mainpane = new StackPane();
 	static public Stage menuStage = new Stage();
 	
 	//MenuBar
-	MenuBar menuBar = new MenuBar();
+	private MenuBar menuBar = new MenuBar();
+	
+	//FileChooser
+	private Desktop desktop = Desktop.getDesktop();
+	private final FileChooser fileChooser = new FileChooser();
 	
 	//fileMenu and fileMenu Items
 	private Menu fileMenu = new Menu("File");
@@ -51,9 +63,17 @@ public class GUIMenuBar extends Application implements EventHandler<ActionEvent>
 	public void start(Stage menuStage) throws Exception {
 	
 	fileMenu.getItems().addAll(open,save,close);
-	close.setOnAction(this);
-	open.setOnAction(this);
-	save.setOnAction(this);
+	close.setOnAction(e -> {
+		Platform.exit();
+		System.exit(0);
+	});
+	open.setOnAction(e -> {
+        File file = fileChooser.showOpenDialog(menuStage);
+        if (file != null) {
+            openFile(file);
+        }
+	});
+	save.setOnAction(e -> {});
 	viewMenu.getItems().addAll(gherkinRUCM,selenium);
 	runMenu.getItems().addAll(chrome,firefox);
 	menuBar.getMenus().addAll(fileMenu,viewMenu,runMenu,helpMenu);
@@ -65,14 +85,15 @@ public class GUIMenuBar extends Application implements EventHandler<ActionEvent>
 	menuStage.setScene(scene);
 	menuStage.show();
 	}
-
-
-	@Override
-	public void handle(ActionEvent event) {
-		if(event.getSource()==close){
-			Platform.exit();
-			System.exit(0);
-		}
-		
-	}
+	
+    private void openFile(File file) {
+        try {
+            desktop.open(file);
+        } catch (IOException ex) {
+            Logger.getLogger(
+                GUIMenuBar.class.getName()).log(
+                    Level.SEVERE, null, ex
+                );
+        }
+    }
 }
