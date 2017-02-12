@@ -26,6 +26,7 @@ public class GUIMenuBar extends Application implements EventHandler<ActionEvent>
 	private MenuItem open = new MenuItem("Open text file");
 	private MenuItem save = new MenuItem("Save text file");
 	private MenuItem close = new MenuItem("Close Program");
+
 	
 	//viewMenu and viewMenu Items
 	private Menu viewMenu = new Menu("View");
@@ -48,8 +49,11 @@ public class GUIMenuBar extends Application implements EventHandler<ActionEvent>
 	
 	@Override
 	public void start(Stage menuStage) throws Exception {
-
+	
 	fileMenu.getItems().addAll(open,save,close);
+	close.setOnAction(this);
+	open.setOnAction(this);
+	save.setOnAction(this);
 	viewMenu.getItems().addAll(gherkinRUCM,selenium);
 	runMenu.getItems().addAll(chrome,firefox);
 	menuBar.getMenus().addAll(fileMenu,viewMenu,runMenu,helpMenu);
@@ -60,19 +64,15 @@ public class GUIMenuBar extends Application implements EventHandler<ActionEvent>
 	
 	menuStage.setScene(scene);
 	menuStage.show();
-	
-	close.setOnAction(e -> {
-		Platform.exit();
-		System.exit(0);
-		});
 	}
-	
-	
-	
-		@Override
+
+
+	@Override
 	public void handle(ActionEvent event) {
-
-	}
+		if(event.getSource()==close){
+			Platform.exit();
+			System.exit(0);
+		}
 		
-
+	}
 }
