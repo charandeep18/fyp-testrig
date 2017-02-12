@@ -24,6 +24,7 @@ public class GUIAbout {
 		
 		closeButton.setOnAction(e-> aboutWindow.close());
 		textArea.setDisable(true);
+		textArea.setWrapText(true);
 		
 		
 		VBox layout = new VBox(10);
