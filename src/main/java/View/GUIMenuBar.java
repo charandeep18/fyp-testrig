@@ -1,6 +1,7 @@
 package View;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
@@ -11,25 +12,28 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
-public class GUIMenuBar extends Application implements EventHandler {
+public class GUIMenuBar extends Application implements EventHandler<ActionEvent> {
 	
+	//Main Pane and Menu Stage
 	static StackPane mainpane = new StackPane();
+	static public Stage menuStage = new Stage();
+	
+	//FileMenu and FileMenu Items
+	private Menu fileMenu = new Menu("File");
+	private MenuItem open = new MenuItem("Open text file");
+	private MenuItem save = new MenuItem("Save text file");
+	private MenuItem close = new MenuItem("Close Program");
+	
+	//
 
 	public static void main(String[] args) {
 		launch(args);
 	}	
 	
 	@Override
-	public void start(Stage primaryStage) throws Exception {
-	final Menu fileMenu = new Menu ("File");
-	MenuItem open = new MenuItem("Open text file");
-	MenuItem save = new MenuItem("Save text file");
-	MenuItem close = new MenuItem("Close Program");
+	public void start(Stage menuStage) throws Exception {
+
 	fileMenu.getItems().addAll(open,save,close);
-	
-//	fileMenu.getItems().add(new MenuItem("Open text file"));
-//	fileMenu.getItems().add(new MenuItem("Save text file"));
-//	fileMenu.getItems().add(new MenuItem("Close Program"));
 	
 	final Menu viewMenu = new Menu ("View");
 	MenuItem gherkinRUCM = new MenuItem("Gherkin/RUCM");
@@ -47,7 +51,7 @@ public class GUIMenuBar extends Application implements EventHandler {
 //	seleniumMenu.getItems().add(new MenuItem("Open Chrome"));
 //	seleniumMenu.getItems().add(new MenuItem("Open Firefox"));
 	
-	final Menu helpMenu = new Menu ("Helpmenu");
+	final Menu helpMenu = new Menu ("Help");
 	helpMenu.setOnAction(this);
 	
 	MenuBar menuBar = new MenuBar();
@@ -58,14 +62,21 @@ public class GUIMenuBar extends Application implements EventHandler {
 	
 	Scene scene = new Scene(mainpane, 500, 400);
 	
-	primaryStage.setScene(scene);
-	primaryStage.show();
+	menuStage.setScene(scene);
+	menuStage.show();
+	
+	close.setOnAction(e -> {
+		Platform.exit();
+		System.exit(0);
+		});
 	}
+	
+	
+	
+		@Override
+	public void handle(ActionEvent event) {
 
-	@Override
-	public void handle(Event event) {
-		// TODO Auto-generated method stub
-		
 	}
+		
 
 }
