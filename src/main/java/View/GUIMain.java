@@ -12,16 +12,16 @@ public class GUIMain extends Application {
 
 	
 	
-//	public static void main(String[] args) {
-//		launch(args);
-//	}
+	public static void main(String[] args) {
+		launch(args);
+	}
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		primaryStage.setTitle("RUCM - Use Case Creator");
 		
 		BorderPane borderPane = new BorderPane();
-
+		borderPane.setTop(GUIMenuBar.mainmenuPane);
 		
 		Scene scene = new Scene(borderPane, 500, 400);
 		primaryStage.setScene(scene);

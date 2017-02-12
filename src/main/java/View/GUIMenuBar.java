@@ -25,7 +25,6 @@ import javafx.stage.FileChooser;
 public class GUIMenuBar extends Application{
 	
 	//Main Pane and Menu Stage
-	//static StackPane mainpane = new StackPane();
 	static HBox mainmenuPane = new HBox();
 	static public Stage menuStage = new Stage();
 	
