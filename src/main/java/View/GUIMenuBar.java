@@ -27,26 +27,31 @@ public class GUIMenuBar extends Application implements EventHandler {
 	MenuItem close = new MenuItem("Close Program");
 	fileMenu.getItems().addAll(open,save,close);
 	
-	
-	
 //	fileMenu.getItems().add(new MenuItem("Open text file"));
 //	fileMenu.getItems().add(new MenuItem("Save text file"));
 //	fileMenu.getItems().add(new MenuItem("Close Program"));
 	
 	final Menu viewMenu = new Menu ("View");
-	viewMenu.getItems().add(new MenuItem("Open text file"));
-	viewMenu.getItems().add(new MenuItem("Save text file"));
-	viewMenu.getItems().add(new MenuItem("Close Program"));
+	MenuItem gherkinRUCM = new MenuItem("Gherkin/RUCM");
+	MenuItem selenium = new MenuItem("Selenium");
+	viewMenu.getItems().addAll(gherkinRUCM,selenium);
 	
-	final Menu seleniumMenu = new Menu ("Selenium"); 
-	seleniumMenu.getItems().add(new MenuItem("Open Chrome"));
-	seleniumMenu.getItems().add(new MenuItem("Open Firefox"));
+//	viewMenu.getItems().add(new MenuItem("Gherkin/RUCM"));
+//	viewMenu.getItems().add(new MenuItem("Selenium"));	
+	
+	
+	final Menu runMenu = new Menu ("Run"); 
+	MenuItem chrome = new MenuItem("Open Chrome");
+	MenuItem firefox = new MenuItem("Open Firefox");
+	runMenu.getItems().addAll(chrome,firefox);
+//	seleniumMenu.getItems().add(new MenuItem("Open Chrome"));
+//	seleniumMenu.getItems().add(new MenuItem("Open Firefox"));
 	
 	final Menu helpMenu = new Menu ("Helpmenu");
 	helpMenu.setOnAction(this);
 	
 	MenuBar menuBar = new MenuBar();
-	menuBar.getMenus().addAll(fileMenu,viewMenu,seleniumMenu,helpMenu);
+	menuBar.getMenus().addAll(fileMenu,viewMenu,runMenu,helpMenu);
 	
 
 	mainpane.getChildren().add(menuBar);
