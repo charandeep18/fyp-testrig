@@ -57,17 +57,14 @@ public class GUIMenuBar extends Application{
 	private MenuItem about = new MenuItem("About");
 	private MenuItem guide = new MenuItem("Guide");
 	
-	public static void main(String[] args) {
-		launch(args);
-	}	
+//	public static void main(String[] args) {
+//		launch(args);
+//	}	
 	
 	@Override
 	public void start(Stage menuStage) throws Exception {
 	fileMenu.getItems().addAll(open,save,close);
-	close.setOnAction(e -> {
-		Platform.exit();
-		System.exit(0);
-	});
+	close.setOnAction(e -> closeProgram());
 	open.setOnAction(e -> {
         File file = fileChooser.showOpenDialog(menuStage);
         fileChooser.setTitle("Open Gherkin File");
@@ -88,7 +85,9 @@ public class GUIMenuBar extends Application{
 	about.setOnAction(e-> {
 		GUIAbout.display("About this software", "About this software");
 	});
-	
+	guide.setOnAction(e-> {
+		GUIHelp.display("Help using this software", "Help Using this software");
+	});
 	menuBar.getMenus().addAll(fileMenu,viewMenu,runMenu,helpMenu);
 	
 
@@ -121,5 +120,11 @@ public class GUIMenuBar extends Application{
     				GUIMenuBar.class.getName()).log(
     						Level.SEVERE, null, ex);
     	}
+    }
+    
+    private void closeProgram(){
+		Platform.exit();
+		System.exit(0);
+		System.out.println("Program has closed successfully");
     }
 }
