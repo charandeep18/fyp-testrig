@@ -14,7 +14,7 @@ public class Login {
 	public void goToSiteLogin() {
 	System.setProperty("webdriver.chrome.driver", "C:\\Users\\chara\\Desktop\\chromedriver.exe");
 	driver = new ChromeDriver();
-	driver.navigate().to("http://127.0.0.1:58714/Homepage.html");
+	driver.navigate().to("http://localhost:8080/demoUI5AppNew/webapp/index.html");
 }
 	@And("^Finds the link to the login page$")
 	public void findLogin(){
@@ -23,7 +23,7 @@ public class Login {
 	
 	@Then("^Clicks on the login link")
 	public void clickLoginButton(){
-	driver.findElement(By.id("logn")).click();	
+	driver.findElement(By.id("login")).click();	
 	}
 	
 	
