@@ -22,6 +22,7 @@ public class GUIMain extends Application {
 		
 		BorderPane borderPane = new BorderPane();
 		borderPane.setTop(GUIMenuBar.mainmenuPane);
+		borderPane.setLeft(GUILeft.leftgrid);
 		
 		Scene scene = new Scene(borderPane, 500, 400);
 		primaryStage.setScene(scene);
