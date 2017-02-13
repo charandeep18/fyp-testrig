@@ -65,7 +65,7 @@ public class GUIMenuBar extends Application{
 	@Override
 	public void start(Stage menuStage) throws Exception {
 	fileMenu.getItems().addAll(open,save,close);
-	close.setOnAction(e -> closeProgram());
+	close.setOnAction(e -> GUIMethods.closeProgram());
 	open.setOnAction(e -> {
         File file = fileChooser.showOpenDialog(menuStage);
         fileChooser.setTitle("Open Gherkin File");
@@ -123,9 +123,9 @@ public class GUIMenuBar extends Application{
     	}
     }
     
-    private void closeProgram(){
-		Platform.exit();
-		System.exit(0);
-		System.out.println("Program has closed successfully");
-    }
+//    private void closeProgram(){
+//		Platform.exit();
+//		System.exit(0);
+//		System.out.println("Program has closed successfully");
+//    }
 }
