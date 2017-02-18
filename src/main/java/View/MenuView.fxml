@@ -7,15 +7,14 @@
 <?import javafx.scene.layout.BorderPane?>
 
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" type="BorderPane" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MenuController">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" type="BorderPane" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Controller.java">
    <top>
-      <MenuBar fx:id="am" BorderPane.alignment="CENTER">
+      <MenuBar BorderPane.alignment="CENTER">
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
               <MenuItem mnemonicParsing="false" text="Open Text File" />
                   <MenuItem mnemonicParsing="false" text="Save Text File" />
-                  <MenuItem mnemonicParsing="false" onAction="#closeProgram" text="Close Program" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="View">
