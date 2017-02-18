@@ -50,7 +50,7 @@
             <items>
               <MenuItem mnemonicParsing="false" text="Save File" />
                   <MenuItem fx:id="exit" mnemonicParsing="false" onAction="#ExitApplication" text="Close" />
-                  <MenuItem mnemonicParsing="false" text="Load File" />
+                  <MenuItem fx:id="loadFile" mnemonicParsing="false" onAction="#OpenFile" text="Load File" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="View">

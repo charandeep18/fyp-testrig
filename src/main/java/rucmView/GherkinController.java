@@ -17,14 +17,14 @@ import javafx.stage.FileChooser;
 public class GherkinController {
 
 	private Desktop desktop = Desktop.getDesktop();
-	private final FileChooser fileChooser = new FileChooser();
+    private final FileChooser fileChooser = new FileChooser();
 	
     @FXML
     private MenuItem exit;
     
     @FXML
     private MenuItem loadFile;
-
+    
     @FXML
     public void ExitApplication(ActionEvent event) {
 		Platform.exit();
@@ -33,29 +33,43 @@ public class GherkinController {
     }
     
     @FXML
-    public void openFile(File file) {
-        try {
-            desktop.open(file);
-        } catch (IOException ex) {
-            Logger.getLogger(
-                GUIMenuBar.class.getName()).log(
-                    Level.SEVERE, null, ex
-                );
-        }
-    }
+    public void OpenFile(ActionEvent event) {
+            File file = fileChooser.showOpenDialog(null);
+            fileChooser.setTitle("Open Gherkin File");
+            if (file != null) {
+            	try {
+            		desktop.open(file);
+            	} catch (IOException exception) {
+            		Logger.getLogger(
+            				MainGUI.class.getName()).log(Level.SEVERE, null, exception);
+            	}
+            	}
+            }
     
-    @FXML
-    public void saveFile(File file, String content) {
-    	try {
-    		FileWriter fileWriter = null;
-    		fileWriter = new FileWriter(file);
-    		fileWriter.write(content);
-    		fileWriter.close();
-    	} catch (IOException ex) {
-    		Logger.getLogger(
-    				GUIMenuBar.class.getName()).log(
-    						Level.SEVERE, null, ex);
-    	}
-    }
+//    @FXML
+//    public void openFile(File file) {
+//        try {
+//            desktop.open(file);
+//        } catch (IOException ex) {
+//            Logger.getLogger(
+//                GUIMenuBar.class.getName()).log(
+//                    Level.SEVERE, null, ex
+//                );
+//        }
+//    }
+//    
+//    @FXML
+//    public void saveFile(File file, String content) {
+//    	try {
+//    		FileWriter fileWriter = null;
+//    		fileWriter = new FileWriter(file);
+//    		fileWriter.write(content);
+//    		fileWriter.close();
+//    	} catch (IOException ex) {
+//    		Logger.getLogger(
+//    				GUIMenuBar.class.getName()).log(
+//    						Level.SEVERE, null, ex);
+//    	}
+//    }
 
 }

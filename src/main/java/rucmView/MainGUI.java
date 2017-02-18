@@ -7,9 +7,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.Window;
 
 public class MainGUI extends Application {
+	
 
+	//public static Window mainStage;
+	
 	@Override
 	public void start(Stage mainStage) throws Exception {
 		try {
