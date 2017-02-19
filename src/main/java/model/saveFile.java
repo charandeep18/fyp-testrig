@@ -18,10 +18,16 @@ public class saveFile {
 public static void savetext(File file, String content){	
 	
 ObservableList<CharSequence> paragraph = GherkinPresenter.readTextArea.getParagraphs();
-
+Iterator<CharSequence> iterator = paragraph.iterator();
 
 try {
 	BufferedWriter bufferedwriter = new BufferedWriter(new FileWriter(file));
+	while(iterator.hasNext())
+	{
+		CharSequence charactersequence = iterator.next();
+		bufferedwriter.append(charactersequence);
+		bufferedwriter.newLine();
+	}
 } catch (IOException e) {
 	// TODO Auto-generated catch block
 	e.printStackTrace();
