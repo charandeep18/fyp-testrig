@@ -48,7 +48,7 @@
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
-              <MenuItem mnemonicParsing="false" text="Save File" />
+              <MenuItem fx:id="saveContents" mnemonicParsing="false" onAction="#SaveFile" text="Save File" />
                   <MenuItem fx:id="loadFile" mnemonicParsing="false" onAction="#OpenFile" text="Load File" />
                   <MenuItem fx:id="exit" mnemonicParsing="false" onAction="#ExitApplication" text="Close" />
             </items>

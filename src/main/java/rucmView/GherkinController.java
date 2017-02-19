@@ -10,8 +10,6 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import Controller.openFile;
-import Controller.saveFile;
 import View.GUIMenuBar;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -24,6 +22,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import model.openFile;
+import model.saveFile;
 
 public class GherkinController {
 
@@ -75,8 +75,9 @@ public class GherkinController {
     @FXML
     public void SaveFile(ActionEvent event) {
     	FileChooser fileChooser = new FileChooser();
+    	fileChooser.setTitle("Save File");
 		File file = fileChooser.showSaveDialog(MainStage.getScene().getWindow());
-		fileChooser.setTitle("Save File");
+		
 		if (file != null) {
 			saveFile.savetext(file,"");
 		}
