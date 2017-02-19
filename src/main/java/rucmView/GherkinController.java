@@ -45,20 +45,27 @@ public class GherkinController {
    
     @FXML
     public void OpenFile(ActionEvent event) {
-    	System.out.println("Loading FileChooser");
-        FileChooser filechooser = new FileChooser();
-        filechooser.setTitle("Open File");
-        File file = filechooser.showOpenDialog(MainStage.getScene().getWindow());
-      if (file != null) {
-    	try {
-    		desktop.open(file);
-    	} catch (IOException exception) {
-    		Logger.getLogger(
-    				MainGUI.class.getName()).log(Level.SEVERE, null, exception);
-    	}
-    	}
-    }
+    	FileChooser filechooser = new FileChooser();
+    	filechooser.showOpenDialog(MainStage.getScene().getWindow());
+    	File file = filechooser.get
+    	File filename = file.getAbsoluteFile();
     	
+    	
+    	
+    	//    	System.out.println("Loading FileChooser");
+//        FileChooser filechooser = new FileChooser();
+//        filechooser.setTitle("Open File");
+//        File file = filechooser.showOpenDialog(MainStage.getScene().getWindow());
+//      if (file != null) {
+//    	try {
+//    		desktop.open(file);
+//    	} catch (IOException exception) {
+//    		Logger.getLogger(
+//    				MainGUI.class.getName()).log(Level.SEVERE, null, exception);
+//    	}
+//    	}
+//    }
+    }
     
     @FXML
     public void ExitApplication(ActionEvent event) {
