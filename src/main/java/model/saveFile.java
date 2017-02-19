@@ -28,11 +28,12 @@ try {
 		bufferedwriter.append(charactersequence);
 		bufferedwriter.newLine();
 	}
-} catch (IOException e) {
-	// TODO Auto-generated catch block
-	e.printStackTrace();
+	bufferedwriter.flush();
+	bufferedwriter.close();
+} catch (IOException inputexception) {
+	Logger.getLogger(
+			presenter.GherkinPresenter.class.getName()).log(Level.SEVERE, null, inputexception);
 }
-
 
 }
 //
