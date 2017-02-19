@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import rucmView.GherkinController;
+import presenter.GherkinPresenter;
 
 public class openFile {
 
@@ -26,16 +26,16 @@ public class openFile {
     		}
     	} catch (FileNotFoundException fileexception) {
     		Logger.getLogger(
-    				rucmView.GherkinController.class.getName()).log(Level.SEVERE, null, fileexception);
+    				presenter.GherkinPresenter.class.getName()).log(Level.SEVERE, null, fileexception);
     	} catch (IOException inputexception) {
     		Logger.getLogger(
-    				rucmView.GherkinController.class.getName()).log(Level.SEVERE, null, inputexception);
+    				presenter.GherkinPresenter.class.getName()).log(Level.SEVERE, null, inputexception);
     	} finally {
     		try {
     			bufferedReader.close();
     		} catch (IOException inputexception) {
         		Logger.getLogger(
-        			rucmView.GherkinController.class.getName()).log(Level.SEVERE, null, inputexception);
+        			presenter.GherkinPresenter.class.getName()).log(Level.SEVERE, null, inputexception);
     		}
     	}    	
     	return stringBuffer.toString();
