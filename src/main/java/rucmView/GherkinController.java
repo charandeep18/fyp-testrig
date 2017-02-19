@@ -45,11 +45,16 @@ public class GherkinController {
    
     @FXML
     public void OpenFile(ActionEvent event) {
-    	FileChooser filechooser = new FileChooser();
-    	filechooser.showOpenDialog(MainStage.getScene().getWindow());
-    	File file = filechooser.get
-    	File filename = file.getAbsoluteFile();
+    	// Setting the filter to show only text files
+    	FileChooser.ExtensionFilter filter = new FileChooser.ExtensionFilter("TXT Files (*.txt)","*.txt");
     	
+    	FileChooser filechooser = new FileChooser();
+    	filechooser.getExtensionFilters().add(filter);
+   	
+    	File file = filechooser.showOpenDialog(MainStage.getScene().getWindow());
+    	if(file != null){
+    		
+    	}
     	
     	
     	//    	System.out.println("Loading FileChooser");
