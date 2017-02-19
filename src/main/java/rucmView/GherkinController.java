@@ -12,12 +12,26 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.Button;
+import javafx.scene.control.MenuBar;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
 public class GherkinController {
 
 	private Desktop desktop = Desktop.getDesktop();
     private final FileChooser fileChooser = new FileChooser();
+    
+    @FXML
+    private Button loadButton;    
+    
+    @FXML
+    private AnchorPane MainStage;
+    
+    @FXML
+    private MenuBar MenuBar;
 	
     @FXML
     private MenuItem exit;
@@ -26,38 +40,49 @@ public class GherkinController {
     private MenuItem loadFile;
     
     @FXML
+    private GridPane GridPane;
+    
+   
+    @FXML
+    public void OpenFile(ActionEvent event) {
+    	System.out.println("Loading FileChooser");
+        FileChooser filechooser = new FileChooser();
+        filechooser.setTitle("Open File");
+        File file = filechooser.showOpenDialog(MainStage.getScene().getWindow());
+      if (file != null) {
+    	try {
+    		desktop.open(file);
+    	} catch (IOException exception) {
+    		Logger.getLogger(
+    				MainGUI.class.getName()).log(Level.SEVERE, null, exception);
+    	}
+    	}
+    }
+    	
+    
+    @FXML
     public void ExitApplication(ActionEvent event) {
 		Platform.exit();
 		System.exit(0);
 		System.out.println("Program has closed successfully");
     }
     
-    @FXML
-    public void OpenFile(ActionEvent event) {
-            File file = fileChooser.showOpenDialog(null);
-            fileChooser.setTitle("Open Gherkin File");
-            if (file != null) {
-            	try {
-            		desktop.open(file);
-            	} catch (IOException exception) {
-            		Logger.getLogger(
-            				MainGUI.class.getName()).log(Level.SEVERE, null, exception);
-            	}
-            	}
-            }
-    
-//    @FXML
-//    public void openFile(File file) {
-//        try {
-//            desktop.open(file);
-//        } catch (IOException ex) {
-//            Logger.getLogger(
-//                GUIMenuBar.class.getName()).log(
-//                    Level.SEVERE, null, ex
-//                );
-//        }
-//    }
+
+    	
+    	
+    	//            File file = fileChooser.showOpenDialog(new Stage());
+//            fileChooser.setTitle("Open Gherkin File");
+//            if (file != null) {
+//            	try {
+//            		desktop.open(file);
+//            	} catch (IOException exception) {
+//            		Logger.getLogger(
+//            				MainGUI.class.getName()).log(Level.SEVERE, null, exception);
+//            	}
+//            	}
+//            }
 //    
+
 //    @FXML
 //    public void saveFile(File file, String content) {
 //    	try {

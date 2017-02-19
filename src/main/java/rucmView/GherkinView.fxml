@@ -11,13 +11,13 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rucmView.GherkinController">
+<AnchorPane fx:id="MainStage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rucmView.GherkinController">
    <children>
       <SplitPane dividerPositions="0.29797979797979796" layoutY="31.0" prefHeight="570.0" prefWidth="600.0">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="403.0" prefWidth="174.0">
                <children>
-                  <GridPane layoutX="1.0" layoutY="114.0" prefHeight="324.0" prefWidth="174.0">
+                  <GridPane fx:id="GridPane" layoutX="1.0" layoutY="114.0" prefHeight="324.0" prefWidth="174.0">
                     <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0" />
@@ -30,7 +30,7 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Button alignment="CENTER" mnemonicParsing="false" prefHeight="31.0" prefWidth="137.0" text="Load Test Case" textAlignment="CENTER" GridPane.columnIndex="1" />
+                        <Button fx:id="loadButton" alignment="CENTER" mnemonicParsing="false" onAction="#OpenFile" prefHeight="31.0" prefWidth="137.0" text="Load Test Case" textAlignment="CENTER" GridPane.columnIndex="1" />
                         <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="139.0" text="Create Defs" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="127.0" text="Exit Application" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                         <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="128.0" text="Seleniun View" GridPane.columnIndex="1" GridPane.rowIndex="2" />
@@ -44,13 +44,13 @@
                </children></AnchorPane>
         </items>
       </SplitPane>
-      <MenuBar prefHeight="32.0" prefWidth="600.0">
+      <MenuBar fx:id="MenuBar" prefHeight="32.0" prefWidth="600.0">
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
               <MenuItem mnemonicParsing="false" text="Save File" />
-                  <MenuItem fx:id="exit" mnemonicParsing="false" onAction="#ExitApplication" text="Close" />
                   <MenuItem fx:id="loadFile" mnemonicParsing="false" onAction="#OpenFile" text="Load File" />
+                  <MenuItem fx:id="exit" mnemonicParsing="false" onAction="#ExitApplication" text="Close" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="View">
