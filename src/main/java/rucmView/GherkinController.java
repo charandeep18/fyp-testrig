@@ -11,6 +11,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import Controller.openFile;
+import Controller.saveFile;
 import View.GUIMenuBar;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -52,6 +53,9 @@ public class GherkinController {
 
     @FXML
     private TextArea readTextArea;
+    
+    @FXML
+    private MenuItem saveContents;
    
     @FXML
     public void OpenFile(ActionEvent event) {
@@ -60,26 +64,22 @@ public class GherkinController {
     	
     	FileChooser filechooser = new FileChooser();
     	filechooser.getExtensionFilters().add(filter);
+    	filechooser.setTitle("Open File");
    	
     	File file = filechooser.showOpenDialog(MainStage.getScene().getWindow());
     	if(file != null){
     		readTextArea.setText(openFile.readFile(file));
     	}
-    	
-    	
-    	//    	System.out.println("Loading FileChooser");
-//        FileChooser filechooser = new FileChooser();
-//        filechooser.setTitle("Open File");
-//        File file = filechooser.showOpenDialog(MainStage.getScene().getWindow());
-//      if (file != null) {
-//    	try {
-//    		desktop.open(file);
-//    	} catch (IOException exception) {
-//    		Logger.getLogger(
-//    				MainGUI.class.getName()).log(Level.SEVERE, null, exception);
-//    	}
-//    	}
-//    }
+    }
+    
+    @FXML
+    public void SaveFile(ActionEvent event) {
+    	FileChooser fileChooser = new FileChooser();
+		File file = fileChooser.showSaveDialog(MainStage.getScene().getWindow());
+		fileChooser.setTitle("Save File");
+		if (file != null) {
+			saveFile.savetext(file,"");
+		}
     }
     
     @FXML
@@ -88,34 +88,4 @@ public class GherkinController {
 		System.exit(0);
 		System.out.println("Program has closed successfully");
     }
-    
-//    private String readFile(File file){
-//    	//Brings in the BufferedReader IO Library from Java
-//    	BufferedReader bufferedReader = null;
-//    	//Brings in the StringBuilder Library from Java
-//    	StringBuilder stringBuffer = new StringBuilder();
-//    	
-//    	try {
-//    		bufferedReader = new BufferedReader(new FileReader(file));
-//    		String inputtext;
-//    		while((inputtext = bufferedReader.readLine()) !=null){
-//    			stringBuffer.append(inputtext);
-//    		}
-//    	} catch (FileNotFoundException fileexception) {
-//    		Logger.getLogger(
-//    				GherkinController.class.getName()).log(Level.SEVERE, null, fileexception);
-//    	} catch (IOException inputexception) {
-//    		Logger.getLogger(
-//    				GherkinController.class.getName()).log(Level.SEVERE, null, inputexception);
-//    	} finally {
-//    		try {
-//    			bufferedReader.close();
-//    		} catch (IOException inputexception) {
-//        		Logger.getLogger(
-//        				GherkinController.class.getName()).log(Level.SEVERE, null, inputexception);
-//    		}
-//    	}    	
-//    	return stringBuffer.toString();
-//    }
-
 }
