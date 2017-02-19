@@ -1,5 +1,6 @@
 package model;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -17,7 +18,16 @@ public class saveFile {
 public static void savetext(File file, String content){	
 	
 ObservableList<CharSequence> paragraph = GherkinPresenter.readTextArea.getParagraphs();
-	
+
+
+try {
+	BufferedWriter bufferedwriter = new BufferedWriter(new FileWriter(file));
+} catch (IOException e) {
+	// TODO Auto-generated catch block
+	e.printStackTrace();
+}
+
+
 }
 //
 //	public static void savetext(File file, String content) {
