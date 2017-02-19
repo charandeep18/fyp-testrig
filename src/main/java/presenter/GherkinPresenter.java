@@ -54,13 +54,8 @@ public class GherkinPresenter {
 //FXML Items for GUI-Right 		
 
 	    @FXML
-	    private TextArea readTextArea;
-	    
-
+	    public static TextArea readTextArea;
 	   
-	    
-	    
-	    
 	    @FXML
 	    public void OpenFile(ActionEvent event) {
 	    	// Setting the filter to show only text files
