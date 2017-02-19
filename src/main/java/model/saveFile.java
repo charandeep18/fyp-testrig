@@ -15,43 +15,42 @@ import presenter.GherkinPresenter;
 
 public class saveFile {
 
-public static void savetext(File file, String content){	
-	
-ObservableList<CharSequence> paragraph = GherkinPresenter.readTextArea.getParagraphs();
-Iterator<CharSequence> iterator = paragraph.iterator();
-
-try {
-	BufferedWriter bufferedwriter = new BufferedWriter(new FileWriter(file));
-	while(iterator.hasNext())
-	{
-		CharSequence charactersequence = iterator.next();
-		bufferedwriter.append(charactersequence);
-		bufferedwriter.newLine();
+	public static void savetext(File file, String content) {
+    	try {
+    		FileWriter fileWriter = null;
+    		fileWriter = new FileWriter(file);
+    		fileWriter.write(content);
+    		fileWriter.close();
+    	} catch (IOException ex) {
+    		Logger.getLogger(
+    				GUIMenuBar.class.getName()).log(
+    						Level.SEVERE, null, ex);
+    	}
+		
 	}
-	bufferedwriter.flush();
-	bufferedwriter.close();
-} catch (IOException inputexception) {
-	Logger.getLogger(
-			presenter.GherkinPresenter.class.getName()).log(Level.SEVERE, null, inputexception);
-}
+	
+	
+//ObservableList<CharSequence> paragraph = GherkinPresenter.readTextArea.getParagraphs();
+//Iterator<CharSequence> iterator = paragraph.iterator();
+//
+//try {
+//	BufferedWriter bufferedwriter = new BufferedWriter(new FileWriter(file));
+//	while(iterator.hasNext())
+//	{
+//		CharSequence charactersequence = iterator.next();
+//		bufferedwriter.append(charactersequence);
+//		bufferedwriter.newLine();
+//	}
+//	bufferedwriter.flush();
+//	bufferedwriter.close();
+//} catch (IOException inputexception) {
+//	Logger.getLogger(
+//			presenter.GherkinPresenter.class.getName()).log(Level.SEVERE, null, inputexception);
+//}
 
 }
-//
-//	public static void savetext(File file, String content) {
-//    	try {
-//    		FileWriter fileWriter = null;
-//    		fileWriter = new FileWriter(file);
-//    		fileWriter.write(content);
-//    		fileWriter.close();
-//    	} catch (IOException ex) {
-//    		Logger.getLogger(
-//    				GUIMenuBar.class.getName()).log(
-//    						Level.SEVERE, null, ex);
-//    	}
-//		
-//	}
+
 	
 
 
 
-}

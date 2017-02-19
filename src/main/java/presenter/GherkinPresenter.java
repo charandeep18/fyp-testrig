@@ -54,7 +54,7 @@ public class GherkinPresenter {
 //FXML Items for GUI-Right 		
 
 	    @FXML
-	    public static TextArea readTextArea;
+	    public TextArea readTextArea;
 	   
 	    @FXML
 	    public void OpenFile(ActionEvent event) {
