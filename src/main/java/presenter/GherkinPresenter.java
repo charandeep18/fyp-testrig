@@ -17,9 +17,6 @@ import model.openFile;
 import model.saveFile;
 
 public class GherkinPresenter {
-
-		private Desktop desktop = Desktop.getDesktop();
-	    private final FileChooser fileChooser = new FileChooser();
 	    
 	    @FXML
 	    private Button loadButton;    
@@ -68,7 +65,6 @@ public class GherkinPresenter {
 	    	FileChooser fileChooser = new FileChooser();
 	    	fileChooser.setTitle("Save File");
 			File file = fileChooser.showSaveDialog(MainStage.getScene().getWindow());
-			
 			if (file != null) {
 				saveFile.savetext(file,"");
 			}
