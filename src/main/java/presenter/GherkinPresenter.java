@@ -18,33 +18,49 @@ import model.saveFile;
 
 public class GherkinPresenter {
 	    
-	    @FXML
-	    private Button loadButton;    
-	    
-	    @FXML
+// FXML Containers for GherkinView
+	
+		@FXML
 	    private AnchorPane MainStage;
-	    
+		
 	    @FXML
+	    private GridPane GridPane;
+	
+// FXML Containers for MenuBar and MenuItems	
+		
+		@FXML
 	    private MenuBar MenuBar;
 		
 	    @FXML
+	    private MenuItem loadFile;		
+		
+	    @FXML
+	    private MenuItem saveContents;
+	    
+	    @FXML
 	    private MenuItem exit;
 	    
-	    @FXML
-	    private MenuItem loadFile;
+//FXML Items for GUI-Left
 	    
-	    @FXML
-	    private GridPane GridPane;
-	    
+		@FXML
+	    private Button loadButton;    
+
 	    @FXML
 	    private Button closeButton;
+	    
+	    @FXML
+	    private Button saveButton;
+
+//FXML Items for GUI-Right 		
 
 	    @FXML
 	    private TextArea readTextArea;
 	    
-	    @FXML
-	    private MenuItem saveContents;
+
 	   
+	    
+	    
+	    
 	    @FXML
 	    public void OpenFile(ActionEvent event) {
 	    	// Setting the filter to show only text files
