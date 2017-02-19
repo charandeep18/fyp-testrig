@@ -50,26 +50,27 @@
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
-              <MenuItem fx:id="saveContents" mnemonicParsing="false" onAction="#SaveFile" text="Save File" />
-                  <MenuItem fx:id="loadFile" mnemonicParsing="false" onAction="#OpenFile" text="Load File" />
-                  <MenuItem fx:id="exit" mnemonicParsing="false" onAction="#ExitApplication" text="Close" />
+              <MenuItem fx:id="saveContents" mnemonicParsing="false" onAction="#SaveFile" text="Save Text File" />
+                  <MenuItem fx:id="loadFile" mnemonicParsing="false" onAction="#OpenFile" text="Load Text File" />
+                  <MenuItem fx:id="exit" mnemonicParsing="false" onAction="#ExitApplication" text="Close Program" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="View">
             <items>
-              <MenuItem mnemonicParsing="false" text="Selenium" />
                   <MenuItem mnemonicParsing="false" text="Gherkin/RUCM" />
+              <MenuItem mnemonicParsing="false" text="Selenium" />
             </items>
           </Menu>
-            <Menu mnemonicParsing="false" text="Selenium">
+            <Menu mnemonicParsing="false" text="Run Options">
                <items>
-                  <MenuItem mnemonicParsing="false" text="Chrome" />
-                  <MenuItem mnemonicParsing="false" text="FireFox" />
+                  <MenuItem mnemonicParsing="false" text="Open Chrome" />
+                  <MenuItem mnemonicParsing="false" text="Open FireFox" />
                </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Help">
                <items>
                   <MenuItem mnemonicParsing="false" text="Guide" />
+                  <MenuItem mnemonicParsing="false" text="About " />
                </items>
             </Menu>
         </menus>
