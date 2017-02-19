@@ -77,7 +77,7 @@ public class GherkinPresenter {
 	    	fileChooser.setTitle("Save File");
 			File file = fileChooser.showSaveDialog(MainStage.getScene().getWindow());
 			if (file != null) {
-				saveFile.savetext(file,"");
+				saveFile.savetext(readTextArea.getText(), file);
 			}
 	    }
 	    

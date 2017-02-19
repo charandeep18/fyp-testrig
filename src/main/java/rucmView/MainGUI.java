@@ -18,7 +18,8 @@ public class MainGUI extends Application {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("GherkinView.fxml"));
 				mainStage.setTitle("RUCM Application");
-				mainStage.setScene(new Scene(root, 800, 500));
+				mainStage.setScene(new Scene(root, 694, 623));
+				mainStage.setResizable(false);
 				mainStage.show();
 		
 		} catch (IOException e) {

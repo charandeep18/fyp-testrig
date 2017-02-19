@@ -15,15 +15,14 @@ import presenter.GherkinPresenter;
 
 public class saveFile {
 
-	public static void savetext(File file, String content) {
+	public static void savetext(String content, File file) {
     	try {
-    		FileWriter fileWriter = null;
-    		fileWriter = new FileWriter(file);
+    		FileWriter fileWriter = new FileWriter(file);
     		fileWriter.write(content);
     		fileWriter.close();
     	} catch (IOException ex) {
     		Logger.getLogger(
-    				GUIMenuBar.class.getName()).log(
+    				saveFile.class.getName()).log(
     						Level.SEVERE, null, ex);
     	}
 		
