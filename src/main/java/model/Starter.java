@@ -9,10 +9,10 @@
 //import javafx.stage.Stage;
 //
 //public class Starter extends Application {
-//	
+//
 //
 //	//public static Window mainStage;
-//	
+//
 //	@Override
 //	public void start(Stage mainStage) throws Exception {
 //		try {
@@ -21,7 +21,7 @@
 //				mainStage.setScene(new Scene(root, 694, 623));
 //				mainStage.setResizable(false);
 //				mainStage.show();
-//		
+//
 //		} catch (IOException e) {
 //			// TODO Auto-generated catch block
 //				e.printStackTrace();
