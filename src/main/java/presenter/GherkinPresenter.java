@@ -96,7 +96,8 @@ public class GherkinPresenter {
 	    
 	    @FXML
 	    public void validateText(ActionEvent event) {
-	    	
+	    	String text = validationArea.getText();
+	    	System.out.print(text);
 	    }
 	}
 	
