@@ -50,6 +50,9 @@ public class GherkinPresenter {
 	    
 	    @FXML
 	    private Button saveButton;
+	    
+	    @FXML
+	    private Button validateButton;
 
 //FXML Items for GUI-Right 		
 
@@ -57,7 +60,7 @@ public class GherkinPresenter {
 	    public TextArea readTextArea;
 	    
 	    @FXML
-	    public TextArea validationArea;
+	    public static TextArea validationArea;
 	   
 	    @FXML
 	    public void OpenFile(ActionEvent event) {
