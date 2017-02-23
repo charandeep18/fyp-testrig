@@ -55,6 +55,9 @@ public class GherkinPresenter {
 
 	    @FXML
 	    public TextArea readTextArea;
+	    
+	    @FXML
+	    public TextArea validationArea;
 	   
 	    @FXML
 	    public void OpenFile(ActionEvent event) {
@@ -86,6 +89,11 @@ public class GherkinPresenter {
 			Platform.exit();
 			System.exit(0);
 			System.out.println("Program has closed successfully");
+	    }
+	    
+	    @FXML
+	    public void validateText(ActionEvent event) {
+	    	
 	    }
 	}
 	
