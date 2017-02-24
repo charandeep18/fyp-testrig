@@ -13,6 +13,9 @@ import javafx.scene.control.TextArea;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.FileChooser;
+import org.fxmisc.richtext.RichTextChange;
+import org.fxmisc.richtext.StyleClassedTextArea;
+
 import model.openFile;
 import model.saveFile;
 
@@ -57,7 +60,7 @@ public class GherkinPresenter {
 //FXML Items for GUI-Right 		
 
 	    @FXML
-	    public TextArea readTextArea;
+	    public StyleClassedTextArea readTextArea;
 	    
 	    @FXML
 	    public static TextArea validationArea;
@@ -73,7 +76,7 @@ public class GherkinPresenter {
 	   	
 	    	File file = filechooser.showOpenDialog(MainStage.getScene().getWindow());
 	    	if(file != null){
-	    		readTextArea.setText(openFile.readFile(file));
+	    		//readTextArea.setText(openFile.readFile(file));
 	    	}
 	    }
 	    
