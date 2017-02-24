@@ -18,6 +18,7 @@ import org.fxmisc.richtext.StyleClassedTextArea;
 
 import model.openFile;
 import model.saveFile;
+import model.checkSyntax;
 
 public class GherkinPresenter {
 	    
@@ -102,6 +103,13 @@ public class GherkinPresenter {
 	    	String text = validationArea.getText();
 	    	System.out.print(text);
 	    }
+	    
+	    @FXML
+	    public void checkSyntax(ActionEvent event){
+	    CheckSyntax check = new CheckSyntax();
+	    	
+	    }
+	    
 	}
 	
 
