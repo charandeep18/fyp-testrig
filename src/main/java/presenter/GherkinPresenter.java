@@ -76,7 +76,7 @@ public class GherkinPresenter {
 	   	
 	    	File file = filechooser.showOpenDialog(MainStage.getScene().getWindow());
 	    	if(file != null){
-	    		//readTextArea.setText(openFile.readFile(file));
+	    	readTextArea.replaceText(openFile.readFile(file));
 	    	}
 	    }
 	    
