@@ -13,6 +13,8 @@ import javafx.scene.control.TextArea;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.FileChooser;
+
+import org.fxmisc.richtext.CodeArea;
 import org.fxmisc.richtext.RichTextChange;
 import org.fxmisc.richtext.StyleClassedTextArea;
 
@@ -61,7 +63,7 @@ public class GherkinPresenter {
 //FXML Items for GUI-Right 		
 
 	    @FXML
-	    public StyleClassedTextArea readTextArea;
+	    public CodeArea readTextArea;
 	    
 	    @FXML
 	    public static TextArea validationArea;
