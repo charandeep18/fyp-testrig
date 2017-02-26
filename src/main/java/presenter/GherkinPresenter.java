@@ -109,7 +109,7 @@ public class GherkinPresenter {
 	    @FXML
 	    public void checkSyntax(ActionEvent event){
 	    model.checkSyntax check = new model.checkSyntax();
-	    	
+	    	  
 	    }
 	    
 	}
